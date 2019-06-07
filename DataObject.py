@@ -4,6 +4,7 @@ import time
 import hashlib
 
 
+# C:\Users\Otimus\Desktop\KeygenMe.exe
 class DataObject:
     def __init__(self, path):
         try:
@@ -11,7 +12,6 @@ class DataObject:
         except IOError:
             print("Error: invalid file/path")
             exit(1)
-
         file_stats = os.stat(path)
         self.name = f.name.split("\\")[-1]
         self.path = f.name
@@ -29,11 +29,11 @@ class DataObject:
 
 
 """
-def main():
+def __main__():
     x = input("Enter path to file: ")
     o = DataObject(x)
     o.printDataObject()
 
 
-main()
+__main__()
 """
