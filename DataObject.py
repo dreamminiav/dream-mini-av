@@ -29,6 +29,8 @@ class DataObject:
 
 
 """
+
+
 def __main__():
     x = input("Enter path to file: ")
     o = DataObject(x)
