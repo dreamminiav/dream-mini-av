@@ -18,61 +18,11 @@ def getListOfFiles(dirName):
                 
     return allFiles
 
-def main():
-    
-    dirName = '//';
-    
+
+def getListOfFilesForDirectory(dirName):
     # Obțin lista tuturor fișierelor din arborele de directoare la un anumit path dat
-    listOfFiles = getListOfFiles(dirName)
-    
-    # Afisez fisierele
-    for elem in listOfFiles:
-        print(elem)
- 
-    print ("****************")
-    
-    # Obțin lista tuturor fișierelor din arborele de directoare la un anumit path dat
-    listOfFiles = list()
+    list_of_files = list()
     for (dirpath, dirnames, filenames) in os.walk(dirName):
-        listOfFiles += [os.path.join(dirpath, file) for file in filenames]
-          
-    for elem in listOfFiles:
-        print(elem)    
-               
-        
-if __name__ == '__main__':
-    main()
+        list_of_files += [os.path.join(dirpath, file) for file in filenames]
 
-
-
-
-"""
-BASE_DIRECTORY="C:\"
-
-for dirpath, dirnames, filenames in os.walk(BASE_DIRECTORY):
-        for filename in filenames:
-
-        #defining file type
-        txtfile=open(filename,"r")
-        txtfile_full_path = os.path.join(dirpath, filename)
-        try:
-            for line in txtfile:
-
-                if line.startswidth('Start Date:'): # You do not need regular expressions. You can use basic string functions: 'break' if you have all information collected.
-                start_date = line.split()[-1]
-
-                elif line.startswidth('Format:'):
-                data_format = line.split()[-1]
-                
-                print(
-                    txtfile_full_path,
-                    start_date,
-                    data_format,
-                    resolution)
-
-        except Exception as e:
-        	print(str(e))
-"""
-               
-"""
-Modulul OS din Python oferă o modalitate de a utiliza funcționalitatea dependentă de sistemul de operare.
+    return list_of_files
